@@ -1,0 +1,1421 @@
+/*
+Theme Name: marketing
+Theme URI: none
+Description: marketingbusiness
+Author: dark
+Author URI: none
+Version: 1.0
+Tags: RWD, 3coluns
+License: MIT
+License URI: mit
+*/
+
+$very_big_desk: 1330px; //大型電腦尺寸
+$big_desk: 1248px; //中型電腦尺寸
+$desk: 1024px; //小型電腦尺寸
+$tablets: 960px; //平板尺寸 (ipad)
+$mobile: 767px; //手機尺寸
+
+$color_white: #ffffff;
+$color_background: #ebebeb;
+$color_light_gray: #919191;
+$color_dark_gray: #383838;
+$color-gray: #787878;
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "微軟正黑體", sans-serif, Arial;
+    // 盒子大小：框線盒子 (規範網頁盒子範圍)
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+// header區
+.header_load {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 7rem;
+    z-index: 9999;
+    background-color: $color_background;
+    overflow-y: hidden;
+
+    .inter_box {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 100%;
+
+        @media screen and (max-width: $mobile) {
+            grid-template-columns: 30% 70% 0;
+        }
+
+        .header_logo {
+            margin: 0 10px;
+            overflow: hidden;
+            padding-top: 10px;
+
+            a {
+                display: inline-block;
+
+                img {
+                    width: 130px;
+                    display: block;
+                    margin: 0 20px;
+
+                    @media screen and (max-width: $mobile) {
+                        width: 80px;
+                        margin: 10px;
+                    }
+                }
+            }
+        }
+
+        .gavn {
+            display: none;
+
+            @media screen and (max-width: $mobile) {
+                display: block;
+            }
+
+            .menu_btn {
+                width: 64px;
+                height: 64px;
+                background: rgba(0, 0, 0, 0);
+                position: fixed;
+                right: 10px;
+                top: 10px;
+                z-index: 51;
+                padding-top: 18px;
+                transition: background 0.3s;
+                cursor: pointer;
+
+                &:hover {
+                    background: rgba(255, 255, 255, 0);
+                }
+
+                span {
+                    display: block;
+                    height: 5px;
+                    width: 60%;
+                    margin: 0 auto;
+                    background: rgb(0, 0, 0);
+                    opacity: 1;
+                    transition: all 0.3s;
+
+                    &:not(:last-child) {
+                        margin-bottom: 8px;
+                    }
+                }
+
+                &.active span:first-child {
+                    transform: rotate(45deg) translate(50%, 50%);
+                }
+                &.active span:last-child {
+                    transform: rotate(-45deg) translate(40%, 0%);
+                }
+                &.active span:not(:first-child):not(:last-child) {
+                    opacity: 0;
+                }
+            }
+            .menu_wrap {
+                position: fixed;
+                width: 100%;
+                right: -100%;
+                top: 0;
+                bottom: 0;
+                background: rgba(255, 255, 255, 0.5);
+                z-index: 50;
+                padding: 120px 50px 50px 50px;
+                transition: right 0.3s;
+
+                ul {
+                    list-style: none;
+                    padding: 0 !important;
+                    margin: 0 !important;
+                    z-index: 50;
+
+                    li {
+                        margin-bottom: 50px;
+                        position: relative;
+                        z-index: 50;
+
+                        img {
+                            width: 30px;
+                            height: 30px;
+                            margin-right: 10px;
+                        }
+
+                        a {
+                            font-size: 40px;
+                            color: rgb(100, 100, 100);
+                            text-decoration: none;
+                            transition: color 0.3s;
+                            z-index: 52;
+
+                            &:hover {
+                                color: red;
+                            }
+                        }
+                    }
+                }
+            }
+            .menu_wrap.active {
+                right: 0 !important;
+            }
+        }
+
+        nav {
+            margin: 0 auto;
+            width: 100%;
+            display: grid;
+            grid-template-columns: 20% 20% 20% 20% 20%;
+            grid-gap: 10px;
+            justify-content: space-evenly;
+
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
+
+            ul {
+                justify-items: center;
+                list-style-type: none;
+                display: block;
+                overflow: hidden;
+
+                li {
+                    display: flex;
+                    align-items: center;
+
+                    img {
+                        width: 7px;
+                        height: 7px;
+                        margin-right: 10px;
+                    }
+
+                    a {
+                        outline: none;
+                        text-decoration: none;
+                        line-height: 6;
+                        padding-right: 10px;
+                        display: block;
+                        font-size: 20px;
+                        color: $color_light_gray;
+
+                        &:hover {
+                            color: #000;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// main區
+.main {
+    display: block;
+
+    .main_one {
+        background: $color_background;
+        width: 100%;
+        height: 100vh;
+        position: relative;
+        overflow-y: hidden;
+
+        @media screen and (max-width: $mobile) {
+            height: 85vh;
+        }
+
+        .text_box {
+            position: relative;
+            width: 100%;
+            height: 300px;
+            top: 200px;
+            left: -100px;
+            overflow-y: hidden;
+
+            @media screen and (max-width: $mobile) {
+                left: 0;
+            }
+
+            .promo_one {
+                position: absolute;
+                top: 120px;
+                left: 380px;
+                font-size: 48px;
+                color: $color_dark_gray;
+                z-index: 1;
+                letter-spacing: 8px;
+
+                @media screen and (max-width: $mobile) {
+                    left: 30px;
+                    top: 50px;
+                }
+            }
+
+            .promo_two {
+                position: absolute;
+                top: 210px;
+                left: 480px;
+                font-size: 48px;
+                color: $color_dark_gray;
+                z-index: 1;
+                letter-spacing: 8px;
+
+                @media screen and (max-width: $mobile) {
+                    left: 54px;
+                    top: 150px;
+                }
+            }
+        }
+
+        .social_message {
+            position: absolute;
+            top: 0;
+            right: 0;
+            row-gap: 0.5rem;
+            width: 5rem;
+            height: 100%;
+            //display: flex;
+            display: none;
+            flex-direction: column;
+            justify-content: center;
+
+            .coperight_mark {
+                writing-mode: vertical-rl;
+                font-feature-settings: initial;
+                display: block;
+                margin: 0 auto;
+                transform: translateX(-0.125rem) rotate(90deg);
+            }
+
+            .coperight_font {
+                writing-mode: vertical-rl;
+                font-feature-settings: initial;
+                display: block;
+                margin: 0 auto;
+            }
+
+            .info {
+                margin: 0 auto;
+
+                ul {
+                    list-style-type: none;
+                }
+            }
+        }
+    }
+}
+
+// banner動畫區域
+.mark_pic {
+    animation: slide 2s linear;
+    display: block;
+    position: absolute;
+    top: 130px;
+    width: 500px;
+    transform: translateX(2%);
+
+    @keyframes slide {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(2%);
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        top: 114px;
+        transform: translateX(-40%);
+
+        @keyframes slide {
+            from {
+                transform: translateX(-200%);
+            }
+            to {
+                transform: translateX(-40%);
+            }
+        }
+    }
+}
+
+.line_one {
+    position: absolute;
+    left: 375px;
+    top: 175px;
+    width: 0;
+    opacity: 0;
+    animation-name: quickliner;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 2s;
+    animation-fill-mode: forwards; /* 重要：確保動畫結束後保持結束狀態 */
+
+    @media screen and (max-width: $mobile) {
+        left: 26px;
+        top: 105px;
+    }
+}
+
+@keyframes quickliner {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 115px;
+        opacity: 1;
+    }
+}
+
+.line_two {
+    position: absolute;
+    left: 535px;
+    top: 265px;
+    width: 95px;
+    width: 0;
+    opacity: 0;
+    animation-name: aliner;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    animation-delay: 2.8s;
+    animation-fill-mode: forwards; /* 重要：確保動畫結束後保持結束狀態 */
+
+    @media screen and (max-width: $mobile) {
+        left: 112px;
+        top: 205px;
+    }
+}
+
+@keyframes aliner {
+    0% {
+        width: 0;
+        opacity: 0;
+    }
+    100% {
+        width: 105px;
+        opacity: 1;
+    }
+}
+
+.line_right {
+    position: absolute;
+    left: 750px;
+    top: 450px;
+    width: 0;
+    opacity: 0;
+    animation-name: rliner;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-delay: 3s;
+    animation-fill-mode: forwards; /* 重要：確保動畫結束後保持結束狀態 */
+
+    @keyframes rliner {
+        0% {
+            width: 0;
+            opacity: 0;
+        }
+        100% {
+            width: 900px;
+            opacity: 1;
+        }
+    }
+
+    @media screen and (max-width: $mobile) {
+        display: none;
+    }
+}
+
+.line_wave_bottom {
+    width: 1200px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+
+    @media screen and (max-width: $mobile) {
+        width: 300px;
+    }
+}
+
+// 卷軸移動區塊
+.wrapper {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: block;
+    overflow-x: hidden;
+
+    .spot_bg {
+        width: 100%;
+        height: 100%;
+
+        .spot_bg_show {
+            display: flex; /* 使用 flexbox 使圖片水平排列 */
+            //overflow-x: hidden; /* 隱藏水平滾動條 */
+            white-space: nowrap; /* 確保所有圖片都在同一行顯示 */
+            // width: calc(100vw * 4); // 假設有 8 張圖片，每張圖片寬度等於容器寬度
+            width: 400%; /* 寬度設置為4倍容器寬度 */
+            min-height: 100%; // 確保區域高度充足
+        }
+
+        .infoma_box {
+            // width: 100%;
+            width: 25%; /* 每個區塊寬度為容器寬度的 1/4 */
+
+            .wave_bg {
+                position: absolute;
+
+                .top_wave {
+                    width: 50%;
+                    height: 1200px;
+
+                    @media screen and (max-width: $mobile) {
+                        display: none;
+                    }
+                }
+            }
+
+            .bg {
+                flex-shrink: 0; /* 防止圖片在 flex 容器中縮放 */
+                // flex: 0 0 100%;  // 每張圖片佔滿容器寬度
+                width: 100%; /* 圖片自然寬度 */
+                height: 1200px; /* 設定高度為容器高度 */
+            }
+        }
+    }
+}
+
+// 推薦作品區
+.recommend {
+    padding-top: 5rem;
+    width: 100%;
+    height: 165vh;
+    position: relative;
+    background-image: url(./images/pattern-blue.jpg);
+    z-index: 1;
+    overflow: hidden;
+
+    @media screen and (max-width: $mobile) {
+        height: 90vh;
+    }
+
+    .deco {
+        position: absolute;
+        top: 20px;
+        left: 0;
+        display: block;
+        width: 100%;
+        max-width: inherit;
+        z-index: 3;
+    }
+
+    .wrapper_service {
+        position: relative;
+        top: 100px;
+
+        @media screen and (max-width: $mobile) {
+            top: 50px;
+        }
+
+        .recommend_text {
+            display: block;
+            margin: 0 auto;
+            padding-top: 60px;
+
+            @media screen and (max-width: $mobile) {
+                padding-top: 0;
+                height: 300px;
+                overflow: hidden;
+            }
+
+            img {
+                margin: 0 auto;
+                display: block;
+                position: absolute;
+                left: 50%;
+                top: 35px;
+                z-index: 3;
+
+                @media screen and (max-width: $mobile) {
+                    top: 0;
+                }
+            }
+
+            h2 {
+                text-align: center;
+                z-index: 3;
+                position: relative;
+                top: 0;
+
+                @media screen and (max-width: $mobile) {
+                    top: 15px;
+                    height: 300px;
+                }
+
+                span {
+                    display: block;
+                    text-align: center;
+                    padding: 20px;
+                    font-size: 40px;
+                }
+            }
+
+            p {
+                text-align: center;
+
+                @media screen and (max-width: $mobile) {
+                    position: absolute;
+                    top: 200px;
+                    font-size: 20px;
+                    padding: 0 36px;
+                }
+            }
+        }
+    }
+
+    .recommend_content {
+        position: relative;
+        margin-bottom: 2.875rem;
+        width: 100%;
+        height: 100%;
+        margin-top: 150px;
+        z-index: 9; // 根據需要進行調整以置於其他元素前面
+        position: relative; // 確保堆疊上下文正確
+        overflow: hidden;
+        justify-content: center; /* 水平居中 */
+        flex-wrap: wrap; /* 允許元素換行 */
+
+        @media screen and (max-width: $mobile) {
+            margin-top: 50px;
+        }
+
+        .recommend_slider {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 800px;
+            display: flex;
+
+            @media screen and (max-width: $mobile) {
+                height: 300px;
+            }
+
+            // & .slider {
+            //     animation: slide 10s linear infinite;
+            //   }
+
+            // @keyframes slide {
+            //     from { transform: translateX(0); }
+            //     to { transform: translateX(-100%); }
+            //   }
+
+            .post_wrapper {
+                position: relative;
+                width: 37.5rem;
+                display: flex;
+                justify-content: flex-end;
+                flex-direction: column;
+                pointer-events: auto; /* Enable pointer events */
+                flex-grow: 1; /* 允許彈性成長以適應空間 */
+                margin: 10px; /* 添加一些外邊距 */
+                max-width: 33%; /* 為了在三列布局中均分父容器的寬度 */
+                align-items: center;
+                grid-template-columns: none !important;
+
+                .promo {
+                    width: 100%;
+                    row-gap: 1.75rem;
+
+                    .post_img {
+                        border-radius: 50px;
+                        transition: 0.5s;
+                        overflow-y: hidden;
+                        margin: auto;
+
+                        @media screen and (max-width: $mobile) {
+                            margin-top: 10px;
+                        }
+
+                        &:hover {
+                            transform: rotate(1deg);
+                            overflow-y: hidden;
+                        }
+
+                        .pic {
+                            width: 400px;
+                            height: 300px;
+                            display: block;
+                            transition: 0.5s;
+                            overflow-y: hidden;
+
+                            @media screen and (max-width: $mobile) {
+                                width: 250px;
+                                height: 100px;
+                            }
+
+                            &:hover {
+                                transform: rotate(1deg);
+                                overflow-y: hidden;
+                                color-interpolation-filters: rgba(125, 168, 255, 0.7);
+                            }
+                        }
+
+                        .Even {
+                            width: 500px;
+                            height: 640px;
+                            margin: 0 auto;
+                            object-fit: cover;
+
+                            @media screen and (max-width: $mobile) {
+                                height: 230px;
+                            }
+                        }
+                    }
+
+                    .post_textarea {
+                        display: block;
+                        margin: 5px;
+                        width: auto; /* Adjust based on layout requirements */
+                        height: auto; /* Adjust based on layout requirements */
+
+                        a {
+                            text-decoration: none;
+                            position: relative; /* 這可以幫助 z-index 生效 */
+                            z-index: 10; /* 這個值需要大於任何可能覆蓋的元素 */
+                            width: 100%; /* 確保 a 標籤寬度充滿容器 */
+                            height: 100%; /* 確保 a 標籤高度充滿容器 */
+                            display: block; /* 使 a 標籤表現像一個區塊元素 */
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.intelligence {
+    position: relative;
+    background-image: url(./images/bg_hall.jpg);
+    background-size: cover;
+    width: 100%;
+    height: 150vh;
+    overflow: hidden;
+
+    @media screen and (max-width: $mobile) {
+        height: 110vh;
+    }
+
+    .show_textarea {
+        position: relative;
+        display: grid;
+        grid-template-columns: 12% 28% 60%;
+        height: 200px;
+        margin: 50px 50px 20px;
+        width: 100%;
+
+        @media screen and (max-width: $mobile) {
+            margin: 20px 30px;
+            height: 125px;
+        }
+
+        h2 {
+            display: block;
+            margin: 0 auto;
+            width: 200px;
+
+            img {
+                display: block;
+                margin: 0 auto;
+                float: left;
+            }
+
+            span {
+                text-align: center;
+                line-height: 2.75;
+                padding-left: 20px;
+                font-size: 26px;
+                font-weight: 900;
+                font-family: sans-serif;
+                position: absolute;
+                top: 0;
+
+                @media screen and (max-width: $mobile) {
+                    position: absolute;
+                    top: 0;
+                }
+            }
+        }
+
+        span {
+            line-height: 4.5;
+            font-size: 18px;
+            font-weight: 500;
+            font-family: sans-serif;
+            position: absolute;
+            top: 70px;
+
+            @media screen and (max-width: $mobile) {
+                position: absolute;
+                top: 70px;
+                line-height: 1.5;
+                padding-right: 40px;
+            }
+        }
+    }
+
+    .info_content {
+        position: relative;
+        overflow: hidden;
+        padding-top: 5rem;
+        padding-bottom: 5rem;
+        margin-top: -2.5rem;
+        height: 100%;
+        width: 30000px;
+
+        .showboxone {
+            top: 0;
+        }
+
+        .showboxtwo {
+            top: 400px;
+        }
+
+        .info_slider {
+            position: absolute;
+            column-gap: 1.625rem;
+
+            .showboxone {
+                position: absolute;
+                top: 0 !important;
+            }
+
+            .showboxtwo {
+                position: absolute;
+                top: 400px !important;
+            }
+
+            .info_post {
+                display: grid;
+                grid-template-columns: 27% 27% 27% 27%;
+                column-gap: 1.625rem;
+
+                .show_oboxs {
+                    margin: 10px;
+                }
+
+                .show_tboxs {
+                    margin: 50px;
+                }
+
+                .info_show {
+                    width: 800px;
+                    height: 265px;
+                    background: white;
+                    border-radius: 20px;
+                    display: grid;
+                    grid-template-columns: 40% 60%;
+                    padding: 30px;
+                    grid-gap: 50px;
+
+                    @media screen and (max-width: $mobile) {
+                        margin-top: 80px;
+                    }
+
+                    .show_img {
+                        width: 100%;
+
+                        img {
+                            width: 300px;
+                            height: 200px;
+                        }
+                    }
+
+                    .show_text {
+                        width: 100%;
+
+                        h2 {
+                            margin: 50px 0;
+                        }
+
+                        p {
+                            margin: 30px 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+// 關於我們頁面
+.about_bg {
+    width: 100%;
+    height: 160vh;
+    background: $color_white;
+    padding: 0 64px;
+    display: grid;
+    grid-template-rows: 65% 35%;
+    overflow-y: hidden;
+
+    @media screen and (max-width: $mobile) {
+        padding: 0 20px;
+        width: 375px;
+        height: 250vh;
+    }
+
+    .about_info_box {
+        width: 100%;
+        display: grid;
+        overflow: hidden;
+
+        @media screen and (min-width: $mobile) {
+            grid-template-columns: 50% 50%;
+        }
+
+        @media screen and (max-width: $mobile) {
+            grid-template-rows: 70% 30%;
+            grid-gap: 20px;
+        }
+
+        .about_info {
+            width: 100%;
+            display: inline-block;
+            margin-top: 180px;
+            height: 100%;
+
+            h2 {
+                padding: 20px 0;
+                font-size: 36px;
+            }
+
+            p {
+                padding: 0 50px 0 0;
+                line-height: 2.4;
+                font-size: 22px;
+
+                @media screen and (max-width: $mobile) {
+                    width: 375px;
+                }
+            }
+        }
+
+        .about_pic {
+            width: 800px;
+            height: 420px;
+            margin: 200px 50px 0 0;
+
+            @media screen and (max-width: $mobile) {
+                margin: 0 50px 0 0;
+            }
+
+            img {
+                width: 800px;
+                height: 420px;
+                object-fit: cover;
+            }
+        }
+    }
+
+    .gallery_about_img {
+        position: relative;
+        width: 760px;
+        height: 305px;
+        margin: 100px auto 0;
+        overflow: hidden;
+
+        &:hover :not(div[data-pos="0"], img) {
+            cursor: pointer;
+        }
+
+        & .about_item {
+            position: absolute;
+            width: 175px;
+            height: 150px;
+            overflow: hidden;
+            transition:
+                transform 0.9s,
+                width 0.9s,
+                height 0.9s;
+
+            & img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+
+        & div[data-pos="0"] {
+            width: 400px;
+            height: inherit;
+            z-index: 10;
+        }
+    }
+
+    div[data-pos="0"] {
+        transform: translate(0, 0);
+    }
+    div[data-pos="1"] {
+        transform: translate(405px, 0);
+    }
+    div[data-pos="2"] {
+        transform: translate(585px, 0);
+    }
+    div[data-pos="3"] {
+        transform: translate(405px, 155px);
+    }
+    div[data-pos="4"] {
+        transform: translate(585px, 155px);
+    }
+
+    @media (width < 800px) {
+        .gallery_about_img {
+            width: 405px;
+            height: 660px;
+
+            & .about_item {
+                width: 200px;
+                height: 150px;
+
+                @media screen and (max-width: $mobile) {
+                    width: 150px;
+                    height: 110px;
+                }
+            }
+
+            & div[data-pos="0"] {
+                width: inherit;
+                height: 350px;
+                z-index: 10;
+            }
+        }
+
+        div[data-pos="0"] {
+            transform: translate(0, 0);
+        }
+        div[data-pos="1"] {
+            transform: translate(0, 355px);
+
+            @media screen and (max-width: $mobile) {
+                transform: translate(0, 370px);
+            }
+
+        }
+        div[data-pos="2"] {
+            transform: translate(0, 510px);
+
+        }
+        div[data-pos="3"] {
+            transform: translate(205px, 355px);
+
+            @media screen and (max-width: $mobile) {
+                transform: translate(205px, 370px);
+            }
+
+        }
+        div[data-pos="4"] {
+            transform: translate(205px, 510px);
+        }
+    }
+}
+
+// 作品案例
+.work_bg {
+    width: 100%;
+    height: 150vh;
+    background: $color_white;
+    padding: 0 64px;
+    overflow-y: hidden;
+
+    @media screen and (max-width: $mobile) {
+        height: 300vh;
+    }
+
+    h2 {
+        margin: 180px 0 50px;
+        width: 100%;
+        font-size: 36px;
+        padding: 20px 0;
+    }
+
+    .work_info_box {
+        display: flex;
+        margin-top: 100px;
+        column-gap: 100px;
+
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+            margin-top: 0;
+        }
+
+        .work_info {
+            width: 100%;
+
+            .work_img {
+                width: 395px;
+                height: auto;
+
+                img {
+                    width: 395px;
+                    display: block;
+                    margin: 0 auto;
+                }
+            }
+
+            .work_text {
+                width: 100%;
+
+                h3 {
+                    padding: 20px 0;
+                    font-size: 20px;
+
+                    @media screen and (max-width: $mobile) {
+                        font-size: 26px;
+                    }
+
+                }
+
+                p {
+                    line-height: 2;
+                    font-size: 16px;
+                    
+                    @media screen and (max-width: $mobile) {
+                        margin-bottom: 50px;
+                        font-size: 18px;
+                    }
+                
+                }
+            }
+        }
+    }
+}
+
+// 為您服務頁面
+.service_bg {
+    width: 100%;
+    height: 100vh;
+    background: $color_white;
+    padding: 0 64px;
+    display: grid;
+    overflow: hidden;
+
+    @media screen and (min-width: $mobile) {
+        grid-template-columns: 50% 50%;
+    }
+
+
+    @media screen and (max-width: $mobile) {
+        grid-template-rows: 60% 40%;
+        height: 150vh;
+    }
+
+    .service_info {
+        width: 100%;
+        display: inline-block;
+        margin-top: 180px;
+
+        @media screen and (max-width: $mobile) {
+            height: 1000px;
+        }
+
+        h2 {
+            padding: 20px 0;
+            font-size: 36px;
+        }
+
+        p {
+            padding: 10px 50px 0 0;
+            line-height: 2.4;
+            font-size: 22px;
+        }
+    }
+
+    .service_img {
+        overflow-y: hidden;
+        width: 100%;
+        height: 400px;
+        margin-top: 300px;
+
+        @media screen and (min-width: $very_big_desk) {
+            height: 500px;
+        }    
+
+        @media screen and (max-width: $mobile) {
+            margin-top: 300px;
+        }    
+
+        .service_box_img {
+            object-fit: cover;
+            //width: 100%;
+            height: auto;
+        }
+    }
+}
+
+// 服務流程頁面
+.process_bg {
+    width: 100%;
+    height: 100vh;
+    overflow-y: hidden;
+
+    @media screen and (max-width: $mobile) {
+        height: 155vh;
+    }
+
+    .process_title {
+        margin: 180px 0 0 50px;
+        font-size: 36px;
+        padding: 20px 0;
+    }
+
+    .process_bigbox {
+        display: flex;
+        margin: 100px auto 0;
+        column-gap: 10px;
+        max-width: 1310px;
+
+        @media screen and (max-width: $mobile) {
+            flex-direction: column;
+            margin: 30px auto 0;
+        }    
+
+        .process_minibox {
+            margin: 0 auto;
+            justify-items: center;
+            width: 100%;
+
+            .process_headline {
+                text-align: center;
+                padding: 20px 0;
+            }
+
+            .process_pic {
+                margin: 0 auto;
+                display: block;
+
+                .pic_icon {
+                    margin: 0 auto;
+                    display: block;
+                }
+            }
+
+            .process_text {
+                width: 100%;
+
+                h3 {
+                    text-align: center;
+                    padding: 10px;
+                    font-size: 20px;
+
+                    @media screen and (max-width: $mobile) {
+                        font-size: 24px;
+                    }
+
+                }
+
+                p {
+                    text-align: center;
+                    padding: 10px;
+                    font-size: 16px;
+
+                    @media screen and (max-width: $mobile) {
+                        font-size: 18px;
+                    }
+        
+                }
+            }
+        }
+
+        .liner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            content: "";
+            height: 1px;
+            background-color: rgba(31, 38, 36, 0.4);
+            top: 90px;
+            width: 400px;
+
+            @media screen and (max-width: $mobile) {
+                display: none;
+            }
+        
+        }
+    }
+}
+
+// 頁尾區
+footer {
+    background: $color_background;
+    padding: 50px;
+    width: 100%;
+    margin-top: 50px;
+
+    @media screen and (max-width: $mobile) {
+        padding: 35px;
+    }
+
+    .big_container {
+        display: flex;
+        justify-content: center;
+        column-gap: 250px;
+
+        @media screen and (max-width: $mobile) {
+            display: block;
+        }
+
+        .mini_container {
+            width: 100%;
+
+            .logo_mini_box {
+                width: 200px;
+                overflow-y: hidden;
+
+                .logo {
+                    padding: 10px 0;
+
+                    img {
+                        width: 100px;
+                    }
+                }
+            }
+
+            .company {
+                width: 100%;
+
+                h2 {
+                    padding: 10px 0;
+                    font-size: 30px;
+                }
+
+                p {
+                    padding: 5px 0;
+                    font-size: 22px;
+                }
+            }
+
+            .link {
+                padding: 10px 0;
+
+                img {
+                    width: 32px;
+                    height: 32px;
+                }
+
+                a {
+                    text-decoration: none;
+                    font-size: 14px;
+                    padding: 0 10px;
+                    color: $color_light_gray;
+
+                    &:hover {
+                        color: $color_dark_gray;
+                    }
+                }
+            }
+
+            .company_info {
+                width: 100%;
+
+                p {
+                    padding: 10px 0;
+                    font-size: 22px;
+                }
+            }
+
+            .copy {
+                padding-top: 20px;
+                font-size: 12px;
+            }
+        }
+    }
+}
+
+// 至頂按鈕
+#arrow {
+    background-image: url(./images/arrow.png);
+    position: fixed;
+    z-index: 2;
+    width: 32px;
+    height: 32px;
+    right: 30px;
+    bottom: 30px;
+    cursor: pointer;
+    display: none;
+}
+
+// 聯絡LEO
+.contact_form {
+    width: 100%;
+    height: 100%;
+
+    .list {
+        padding: 20px 0;
+        margin: 180px 0 0 50px;
+        width: 100%;
+        font-size: 36px;
+    }
+
+    form {
+        width: 1280px;
+        margin: 0 auto;
+        padding: 20px 30px 100px;
+
+        @media screen and (max-width: $tablets) {
+            width: 100%;
+            padding: 20px 20px 100px;
+        }
+
+        label {
+            font-weight: 700;
+            font-size: 20px;
+        }
+
+        input {
+            padding: 15px;
+            margin: 10px 0;
+            font-size: 18px;
+            background: white;
+
+            @media screen and (max-width: $tablets) {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            @media screen and (max-width: $tablets) {
+                width: 20px;
+            }
+
+            &::placeholder {
+                color: $color-gray;
+                font-size: 14px;
+            }
+        }
+
+        input[type="text"],
+        [type="number"],
+        [type="email"],
+        [type="submit"] {
+            width: 100%;
+        }
+
+        input[type="submit"] {
+            font-size: 20px;
+            font-weight: 900;
+
+            &:hover {
+                background: #877300;
+            }
+        }
+        textarea {
+            width: 100%;
+            height: 300px;
+            margin: 30px 0;
+            padding: 10px;
+        }
+    }
+}
