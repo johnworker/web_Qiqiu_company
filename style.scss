@@ -907,6 +907,7 @@ $color-gray: #787878;
             width: 800px;
             height: 420px;
             margin: 200px 50px 0 0;
+            overflow: hidden;
 
             @media screen and (max-width: $mobile) {
                 margin: 0 50px 0 0;
