@@ -583,10 +583,13 @@ License URI: mit
   transition: 0.5s;
   overflow-y: hidden;
   margin: auto;
+  width: -moz-fit-content;
+  width: fit-content;
 }
 @media screen and (max-width: 767px) {
   .recommend .recommend_content .recommend_slider .post_wrapper .promo .post_img {
     margin-top: 10px;
+    width: auto;
   }
 }
 .recommend .recommend_content .recommend_slider .post_wrapper .promo .post_img:hover {

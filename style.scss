@@ -639,9 +639,11 @@ $color-gray: #787878;
                         transition: 0.5s;
                         overflow-y: hidden;
                         margin: auto;
+                        width: fit-content;
 
                         @media screen and (max-width: $mobile) {
                             margin-top: 10px;
+                            width: auto;
                         }
 
                         &:hover {
