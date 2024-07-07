@@ -485,7 +485,6 @@ $color-gray: #787878;
                 height: 1200px; /* 設定高度為容器高度 */
 
                 @media screen and (max-width: $mobile) {
-                    height: 600px;
                     object-fit: cover;
                 }
             }
@@ -504,7 +503,7 @@ $color-gray: #787878;
     overflow: hidden;
 
     @media screen and (max-width: $mobile) {
-        height: 90vh;
+        height: 120vh;
     }
 
     .deco {
@@ -711,7 +710,7 @@ $color-gray: #787878;
     overflow: hidden;
 
     @media screen and (max-width: $mobile) {
-        height: 110vh;
+        height: 140vh;
     }
 
     .show_textarea {
