@@ -1030,6 +1030,7 @@ $color-gray: #787878;
 
     @media screen and (min-width: $mobile) {
         grid-template-columns: 50% 50%;
+        height: 100%;
     }
 
     @media screen and (max-width: $mobile) {
@@ -1041,6 +1042,7 @@ $color-gray: #787878;
         width: 100%;
         display: inline-block;
         margin-top: 180px;
+        height: 100%;
 
         @media screen and (max-width: $mobile) {
             height: 1000px;
@@ -1055,6 +1057,15 @@ $color-gray: #787878;
             padding: 10px 50px 0 0;
             line-height: 2.4;
             font-size: 22px;
+
+            @media screen and (min-width: $desk) {
+                padding: 10px 300px 0 0 !important;
+            }     
+            
+            @media screen and (min-width: $mobile) {
+                padding: 10px 50px 0 0;
+            }        
+
         }
     }
 
@@ -1085,6 +1096,14 @@ $color-gray: #787878;
     width: 100%;
     height: 100vh;
     overflow-y: hidden;
+
+    @media screen and (min-width: $desk) {
+        height: 70vh !important;
+    }
+
+    @media screen and (min-width: $mobile) {
+        height: 90vh;
+    }
 
     @media screen and (max-width: $mobile) {
         height: 155vh;
