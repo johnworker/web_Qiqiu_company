@@ -503,7 +503,7 @@ $color-gray: #787878;
     overflow: hidden;
 
     @media screen and (max-width: $mobile) {
-        height: 120vh;
+        height: 100vh;
     }
 
     .deco {
@@ -710,7 +710,7 @@ $color-gray: #787878;
     overflow: hidden;
 
     @media screen and (max-width: $mobile) {
-        height: 140vh;
+        height: 120vh;
     }
 
     .show_textarea {
@@ -867,7 +867,7 @@ $color-gray: #787878;
     @media screen and (max-width: $mobile) {
         padding: 0 20px;
         width: 375px;
-        height: 200vh;
+        height: 210vh;
     }
 
     .about_info_box {

@@ -456,7 +456,7 @@ License URI: mit
 }
 @media screen and (max-width: 767px) {
   .recommend {
-    height: 120vh;
+    height: 100vh;
   }
 }
 .recommend .deco {
@@ -648,7 +648,7 @@ License URI: mit
 }
 @media screen and (max-width: 767px) {
   .intelligence {
-    height: 140vh;
+    height: 120vh;
   }
 }
 .intelligence .show_textarea {
@@ -791,7 +791,7 @@ License URI: mit
   .about_bg {
     padding: 0 20px;
     width: 375px;
-    height: 200vh;
+    height: 210vh;
   }
 }
 .about_bg .about_info_box {
