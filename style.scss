@@ -483,6 +483,11 @@ $color-gray: #787878;
                 // flex: 0 0 100%;  // 每張圖片佔滿容器寬度
                 width: 100%; /* 圖片自然寬度 */
                 height: 1200px; /* 設定高度為容器高度 */
+
+                @media screen and (max-width: $mobile) {
+                    height: 600px;
+                    object-fit: cover;
+                }
             }
         }
     }

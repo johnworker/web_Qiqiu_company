@@ -438,6 +438,13 @@ License URI: mit
   width: 100%; /* 圖片自然寬度 */
   height: 1200px; /* 設定高度為容器高度 */
 }
+@media screen and (max-width: 767px) {
+  .wrapper .spot_bg .infoma_box .bg {
+    height: 600px;
+    -o-object-fit: cover;
+       object-fit: cover;
+  }
+}
 
 .recommend {
   padding-top: 5rem;
